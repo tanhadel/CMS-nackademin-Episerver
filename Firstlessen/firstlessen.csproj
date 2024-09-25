@@ -13,7 +13,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="EPiServer.CMS" Version="12.29.0" />
+    <PackageReference Include="EPiServer.CMS" Version="12.31.2" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Serilog" Version="4.0.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
@@ -23,5 +23,16 @@
   
   <ItemGroup>
     <EmbeddedResource Include="Resources\Translations\**\*" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="wwwroot\pages\**" />
+    <Content Remove="wwwroot\pages\**" />
+    <EmbeddedResource Remove="wwwroot\pages\**" />
+    <None Remove="wwwroot\pages\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Resources\Translations\PropertyNames.xml" />
   </ItemGroup>
 </Project>

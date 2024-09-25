@@ -10,11 +10,12 @@ namespace firstlessen.Models.ViewModels
         }
 
         public T CurrentPage { get; set; }
+
         public LayoutModel Layout { get; set; }
     }
 
     public static class PageViewModel
     {
-        public static PageViewModel<T> Create<T>(T page) where T : SitePageData => new PageViewModel<T>(page);
-    } 
+        public static PageViewModel<T> Create<T>(T page) where T : SitePageData => new(page);
+    }
 }  

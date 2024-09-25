@@ -1,3 +1,4 @@
+using EPiServer.Cms.Shell.UI.Configurations;
 using Serilog;
 namespace Firstlessen
 {
@@ -10,6 +11,7 @@ namespace Firstlessen
 
             CreateHostBuilder(args).Build().Run();
         }
+        
 
         public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
@@ -18,11 +20,13 @@ namespace Firstlessen
             .AddJsonFile("appsettings.{Environment.MachineName}.json", true, true)
             .AddEnvironmentVariables()
             .Build();
+        
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureCmsDefaults()
                 .UseSerilog()
                 .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+        
     }
 }

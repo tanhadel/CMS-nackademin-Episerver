@@ -1,0 +1,9 @@
+﻿@using EPiServer.Web.Routing
+@using firstlessen.Business.Components.Slideshow    
+
+@model SlideshowViewComponentModel
+
+@foreach (var item in Model.Pages)
+{
+    <img src="@UrlResolver.Current.GetUrl(item.Image)" />
+}

@@ -1,8 +1,10 @@
 using EPiServer.Cms.Shell;
+using EPiServer.Cms.Shell.UI.Configurations;
 using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
+using firstlessen.Business.Extensions;
 
 namespace Firstlessen
 {
@@ -27,9 +29,16 @@ namespace Firstlessen
             services
                 .AddCmsAspNetIdentity<ApplicationUser>()
                 .AddCms()
+                .AddNackademin()
                 .AddAdminUserRegistration()
                 .AddEmbeddedLocalization<Startup>();
-        }
+			    services.Configure<UploadOptions>(x => 
+                {
+				x.FileSizeLimit = 1000000;
+			    });
+
+		}
+
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
