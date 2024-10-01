@@ -4,16 +4,6 @@
 @inject IContentLoader loader
 @model StartPageViewModel
 
-@* <h1>@Html.Raw(Model.CurrentPage.Heading)</h1>
-
-<h1>@Html.Raw(Model.CurrentPage.MainBody)</h1>
-
-<h1>@Html.Raw(Model.Layout.StartPage.Name)</h1>
-
-<h1>@Html.Raw(Model.Layout.SettingsPage.Name)</h1>
- @await Component.InvokeAsync("Slideshow") *@
-
-
 @{
     var containerId = Model.Layout.SettingsPage.SlideshowContainer;
     var slides = loader.GetChildren<SlideshowPage>(containerId).ToList();
