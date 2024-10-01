@@ -40,7 +40,10 @@ namespace firstlessen.Models.Pages
             Name = "Slideshow",
 			Description = "Add a slideshow to the page"
 		)]
-		[AllowedTypes(typeof(SlideshowPage))]
+		[AllowedTypes(
+            typeof(SlideshowPage),
+            typeof(SlideshowPage)
+            )]
 
 
         public virtual ContentArea Content { get; set; }
